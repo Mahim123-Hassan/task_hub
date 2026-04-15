@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:task_hub/app.dart';
 
-void main() {
-  runApp(const TaskManager());
+void main (){
+  runApp(Taskmanager());
 }
-
-

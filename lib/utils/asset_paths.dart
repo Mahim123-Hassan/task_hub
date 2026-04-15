@@ -1,6 +1,6 @@
 class AssetPaths {
- static const String _imageUrlS='assets/images/';
- static const String backgroundSvg='$_imageUrlS/background.svg';
- static const String logoSvg='$_imageUrlS/logo.svg';
+ static const String _imageUrl='assets/images';
+ static const String backgroundSvg='$_imageUrl/background.svg';
+ static const String logoSvg='$_imageUrl/logo.svg';
 
 }
