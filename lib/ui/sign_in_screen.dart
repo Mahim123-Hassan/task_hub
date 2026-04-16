@@ -4,6 +4,7 @@ import 'package:task_hub/ui/sign_up_screen.dart';
 import 'package:task_hub/widgets/screen_background.dart';
 
 import 'fotgot_password_email_screen.dart';
+import 'main_bottom_nav_holder_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -75,7 +76,9 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  void _onTapSignInButton() {}
+  void _onTapSignInButton() {
+    Navigator.pushNamed(context,  MainBottomNavHolderScreen.name);
+  }
 
   void _onTapForgotPasswordButton() {
     Navigator.pushNamed(context, FotgotPasswordEmailScreen.name);

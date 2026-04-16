@@ -47,8 +47,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
 
               FilledButton(
-                onPressed: _onTapSubmitButton,
-                child: Icon(Icons.arrow_circle_right_outlined),
+                onPressed: _onTapConfirmButton,
+                child: Text("Confirm"),
               ),
               SizedBox(height: 24),
               Center(
@@ -85,5 +85,5 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     );
   }
 
-  void _onTapSubmitButton() {}
+  void _onTapConfirmButton() {}
 }
