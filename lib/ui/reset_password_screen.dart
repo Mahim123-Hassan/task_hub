@@ -1,22 +1,18 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:task_hub/ui/reset_password_screen.dart';
 import 'package:task_hub/ui/sign_in_screen.dart';
 
 import '../widgets/screen_background.dart';
 
-class ForgotPasswordVerifyOtpScreen extends StatefulWidget {
-  const ForgotPasswordVerifyOtpScreen({super.key});
-  static const String name = "/ForgotPasswordVerifyOtpScreen";
+class ResetPasswordScreen extends StatefulWidget {
+  const ResetPasswordScreen({super.key});
+  static const String name = '/ResetPasswordScreen';
 
   @override
-  State<ForgotPasswordVerifyOtpScreen> createState() =>
-      _ForgotPasswordVerifyOtpScreenState();
+  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
-class _ForgotPasswordVerifyOtpScreenState
-    extends State<ForgotPasswordVerifyOtpScreen> {
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,32 +25,25 @@ class _ForgotPasswordVerifyOtpScreenState
             children: [
               SizedBox(height: 60),
               Text(
-                "OTP Verification",
+                "Reset Password",
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               Text(
-                "A 6 digits verification OTP will be send to your email address",
+                "Minimum length of password should more the 8 letters",
                 style: Theme.of(context).textTheme.labelMedium,
               ),
               SizedBox(height: 8),
-              PinCodeTextField(
-                keyboardType: TextInputType.number,
-                length: 6,
-                obscureText: false,
-                animationType: AnimationType.fade,
-                pinTheme: PinTheme(
-                  shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(5),
-                  fieldHeight: 50,
-                  fieldWidth: 40,
-                  activeFillColor: Colors.white,
-                  inactiveFillColor: Colors.white,
-                  selectedFillColor: Colors.white,
+              TextFormField(
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.email),
+                  hintText: "New Password",
                 ),
-                animationDuration: Duration(milliseconds: 300),
-                backgroundColor: Colors.transparent,
-                enableActiveFill: true,
-                appContext: context,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.email),
+                  hintText: "Confirm Password",
+                ),
               ),
 
               FilledButton(
@@ -74,7 +63,8 @@ class _ForgotPasswordVerifyOtpScreenState
                       TextSpan(
                         text: "Sign In",
                         style: TextStyle(color: Colors.green),
-                        recognizer: TapGestureRecognizer()..onTap = _onTapSignInButton,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = _onTapSignInButton,
                       ),
                     ],
                   ),
@@ -94,7 +84,6 @@ class _ForgotPasswordVerifyOtpScreenState
       (protected) => false,
     );
   }
-  void _onTapSubmitButton(){
-    Navigator.pushNamed(context, ResetPasswordScreen.name);
-  }
+
+  void _onTapSubmitButton() {}
 }
