@@ -19,7 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.vertical,
             child: Column(
               spacing: 8,
               crossAxisAlignment: .start,
@@ -27,19 +27,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(height: 60),
                 Text(
                   "join With Us",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 SizedBox(height: 8),
-                TextFormField(decoration: InputDecoration(hintText: "Email")),
                 TextFormField(
-                  decoration: InputDecoration(hintText: "First name"),
+                  decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.email),
+                    hintText: "Email",
+                  ),
                 ),
                 TextFormField(
-                  decoration: InputDecoration(hintText: "Last name"),
+                  decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.drive_file_rename_outline),
+                    hintText: "First name",
+                  ),
                 ),
-                TextFormField(decoration: InputDecoration(hintText: "Mobile")),
                 TextFormField(
-                  decoration: InputDecoration(hintText: "Password"),
+                  decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.drive_file_rename_outline),
+                    hintText: "Last name",
+                  ),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.phone),
+                    hintText: "Mobile",
+                  ),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.lock),
+                    hintText: "Password",
+                  ),
                 ),
 
                 FilledButton(
