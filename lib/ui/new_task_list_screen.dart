@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/task_card.dart';
+
 class NewTaskListScreen extends StatefulWidget {
   const NewTaskListScreen({super.key});
 
@@ -11,63 +13,25 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        spacing: 8,
-        children: [
-          SizedBox(),
-          _buildTaskSummaryListView(),
-          Expanded(
-            child: ListView.builder(
+      body: SingleChildScrollView(
+        child: Column(
+          spacing: 8,
+          children: [
+            SizedBox(),
+            _buildTaskSummaryListView(),
+            ListView.separated(
+              primary: false,
+              shrinkWrap: true,
+              itemCount: 10,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text("Title of task"),
-                  subtitle: Column(
-                    crossAxisAlignment: .start,
-                    children: [
-                      Text(
-                        "Description of the task",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      Text("Data: 17 April 2026"),
-
-                      Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Text(
-                              "New",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          Spacer(),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.delete, color: Colors.red),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.edit, color: Colors.green),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                );
+                return Task_card();
+              },
+              separatorBuilder: (context,index){
+                return SizedBox(height: 8,);
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -101,3 +65,4 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
     );
   }
 }
+
