@@ -61,6 +61,7 @@ class Taskmanager extends StatelessWidget {
             color: Colors.grey,
           ),
         ),
+        scaffoldBackgroundColor: Colors.green.shade50
       ),
 
       routes: <String, WidgetBuilder>{
