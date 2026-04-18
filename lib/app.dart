@@ -7,6 +7,7 @@ import 'package:task_hub/ui/reset_password_screen.dart';
 import 'package:task_hub/ui/sign_in_screen.dart';
 import 'package:task_hub/ui/sign_up_screen.dart';
 import 'package:task_hub/ui/splash_screen.dart';
+import 'package:task_hub/ui/update_profile_screen.dart';
 
 class Taskmanager extends StatelessWidget {
   const Taskmanager({super.key});
@@ -74,7 +75,8 @@ class Taskmanager extends StatelessWidget {
             ForgotPasswordVerifyOtpScreen(),
         ResetPasswordScreen.name: (_) => ResetPasswordScreen(),
         MainBottomNavHolderScreen.name:(_)=> MainBottomNavHolderScreen(),
-        AddNewTaskScreen.name:(_)=>AddNewTaskScreen()
+        AddNewTaskScreen.name:(_)=>AddNewTaskScreen(),
+        UpdateProfileScreen.name:(_)=>UpdateProfileScreen()
       },
       initialRoute: SplashScreen.name,
     );
