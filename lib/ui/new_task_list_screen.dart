@@ -26,12 +26,17 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
               itemBuilder: (context, index) {
                 return Task_card();
               },
-              separatorBuilder: (context,index){
-                return SizedBox(height: 8,);
+              separatorBuilder: (context, index) {
+                return SizedBox(height: 8);
               },
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+
+        onPressed: () {},
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -65,4 +70,3 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
     );
   }
 }
-
